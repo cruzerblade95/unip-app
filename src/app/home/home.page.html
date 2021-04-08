@@ -8,28 +8,30 @@
 
 <ion-content padding style="--background: #263A7F; --color: white">
   <div *ngIf="user != null">
-    <h3>Bem vindo, <b>{{ user.email }}</b></h3>
+    <h3>Welcome, <b>{{ user.email }}</b></h3>
     <div>
-      <p>Para marcar presença numa palestra, clique no botão com ícone de câmera abaixo e dê permissão para que o
-        aplicativo acesse a câmera do telefone. Então escaneie o QR Code fornecido pela organização.</p>
-      <p>Lembre-se de que para sua presença ser validada com sucesso será preciso validar sua entrada e sua saída do
-        evento.</p>
+      <p>To be present at a lecture, click the button with the camera icon below and give permission for the application
+        to
+        access the phone's camera. Then scan the QR Code provided by the organization.</p>
+      <p>Remember that for your presence to be successfully validated, you will need to validate your entry and exit
+        from the
+        event.</p>
     </div>
-    <ion-button color="light" (click)="Sair()">Sair</ion-button>
+    <ion-button color="light" (click)="Sair()">LogOut</ion-button>
     <ion-button color="light" (click)="Sair()">
       <ion-icon name="camera"></ion-icon>
-      Scanear
+      Scan
     </ion-button>
   </div>
   <div *ngIf="user == null">
     <br>
     <br>
-    <img src="../../assets/images/unip-logo.png" alt="" style="width: 70%; margin: 10% 15%;">
+    <img src="../../assets/images/unip-logo1.png" alt="" style="width: 70%; margin: 10% 15%;">
     <br>
     <br>
 
     <p>
-      <ion-item color="transparent" >
+      <ion-item color="transparent">
         <ion-label floating>
           <ion-icon style="--color: white" name='person'></ion-icon>
         </ion-label>
@@ -42,13 +44,13 @@
         <ion-label floating>
           <ion-icon style="--color: white" name='lock'></ion-icon>
         </ion-label>
-        <ion-input style="--color: white" type="password" placeholder="Senha" #senha></ion-input>
+        <ion-input style="--color: white" type="password" placeholder="Password" #senha></ion-input>
       </ion-item>
     </p>
 
     <br>
-    <ion-button color="warning" expand="block" (click)="LoginComEmail()">Entrar</ion-button>
-    <ion-button color="warning" expand="block" [routerLink]="'/register/'" style="margin-top: 1rem">Cadastrar
+    <ion-button color="warning" expand="block" (click)="LoginComEmail()">Enter</ion-button>
+    <ion-button color="warning" expand="block" [routerLink]="'/register/'" style="margin-top: 1rem">Sign Up
     </ion-button>
   </div>
 </ion-content>
