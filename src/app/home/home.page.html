@@ -1,10 +1,10 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar style="--background: #263A7F; --color: white">
     <ion-title style="text-align: center">
       Unip - Eventos
     </ion-title>
   </ion-toolbar>
-</ion-header> -->
+</ion-header>
 
 <ion-content padding style="--background: #263A7F; --color: white">
   <div *ngIf="user != null">
@@ -17,12 +17,13 @@
         from the
         event.</p>
     </div>
-    <ion-button color="light" (click)="Sair()">LogOut</ion-button>
+    <ion-button color="light" (click)="SignOut()">LogOut</ion-button>
     <ion-button color="light" (click)="Sair()">
       <ion-icon name="camera"></ion-icon>
       Scan
     </ion-button>
   </div>
+
   <div *ngIf="user == null">
     <br>
     <br>
@@ -54,3 +55,32 @@
     </ion-button>
   </div>
 </ion-content>
+
+<div *ngIf="user != null">
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="schedule">
+          <ion-icon name="calendar"></ion-icon>
+          <ion-label>Schedule</ion-label>
+          <ion-badge>6</ion-badge>
+        </ion-tab-button>
+
+        <ion-tab-button tab="blog">
+          <ion-icon name="today"></ion-icon>
+          <ion-label>Blog</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="map">
+          <ion-icon name="map"></ion-icon>
+          <ion-label>Map</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="profile">
+          <ion-icon name="contact"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</div>

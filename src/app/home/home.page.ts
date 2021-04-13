@@ -48,7 +48,7 @@ export class HomePage {
       });
   }
 
-  public Sair(): void {
+  public SignOut(): void {
     this.firebaseauth.auth.signOut()
       .then(() => {
         this.exibirToast('Você saiu');
