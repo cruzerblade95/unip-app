@@ -20,13 +20,13 @@ export class RegisterPage implements OnInit {
   register(form) {
     this.firebaseauth.auth.createUserWithEmailAndPassword(form.value.email, form.value.password)
       .then(() => {
-        firebase.database().ref('alunos/' + firebase.auth().currentUser.uid).set({
-          nome: form.value.nome,
-          matricula: form.value.matricula,
-          turma: form.value.turma,
+        firebase.database().ref('students/' + firebase.auth().currentUser.uid).set({
+          name: form.value.name,
+          enrollment: form.value.enrollment,
+          class: form.value.class,
           email: form.value.email
         }).then(() => {
-          this.exibirToast('Usuário criado com sucesso');
+          this.exibirToast('Creating student successful');
         });
       })
       .catch((erro: any) => {

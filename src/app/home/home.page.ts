@@ -26,7 +26,7 @@ export class HomePage {
   public LoginComEmail(): void {
     this.firebaseauth.auth.signInWithEmailAndPassword(this.email.value, this.password.value)
       .then(() => {
-        this.exibirToast('Login efetuado com sucesso');
+        this.exibirToast('Login is Successful');
       })
       .catch((erro: any) => {
         this.exibirToast(erro);
@@ -40,7 +40,7 @@ export class HomePage {
           email: this.email.value,
           password: this.password.value
         }).then(() => {
-          this.exibirToast('Usuário criado com sucesso');
+          this.exibirToast('Register is successful');
         });
       })
       .catch((erro: any) => {
