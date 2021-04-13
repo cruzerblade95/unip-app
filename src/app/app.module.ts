@@ -11,17 +11,19 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
 import { NgxQRCodeModule } from "ngx-qrcode2";
+import { environment } from 'src/environments/environment';
 
-export const firebaseConfig = {
-    apiKey: "AIzaSyCovSl4atTfqA6x3CDgn97B8ozr6EoEisc",
-    authDomain: "unipapp.firebaseapp.com",
-    databaseURL: "https://unipapp.firebaseio.com",
-    projectId: "unipapp",
-    storageBucket: "",
-    messagingSenderId: "52047596843",
-    appId: "1:52047596843:web:6e5bc4d4a8bcf213"
-};
+// export const firebaseConfig = {
+//     apiKey: "AIzaSyBLrgYdI5-SsBCBsiMDzP5JfepWOJXXEg4",
+//     authDomain: "unip-app-project.firebaseapp.com",
+//     projectId: "unip-app-project",
+//     storageBucket: "unip-app-project.appspot.com",
+//     messagingSenderId: "602879669286",
+//     appId: "1:602879669286:web:54030753712026876222e7",
+//     measurementId: "G-H7ZLF101N0"
+// };
 
 @NgModule({
     declarations: [AppComponent],
@@ -30,14 +32,16 @@ export const firebaseConfig = {
         BrowserModule,
         IonicModule.forRoot(),
         AppRoutingModule,
-        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule,
         AngularFireAuthModule,
         NgxQRCodeModule
     ],
     providers: [
         StatusBar,
         SplashScreen,
-        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        { provide: FirestoreSettingsToken, useValue: {} }
     ],
     bootstrap: [AppComponent]
 })
