@@ -18,9 +18,9 @@ export class EditCourseComponent implements OnInit {
   exist: boolean;
   submitted = false;
   days = [
-    'أحد - ثلاثاء - خميس',
-    'اثنبن - أربعاء',
-    'أحد - ثلاثاء - أربعاء - خميس'
+    'Sunday - Tuesday - Thursday',
+    'Mon - Wednesday',
+    'Sunday - Tuesday - Wednesday - Thursday'
   ];
 
   constructor(private courseService: CourseService,

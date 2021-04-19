@@ -28,6 +28,7 @@
     "@zxing/library": "^0.18.3",
     "@zxing/ngx-scanner": "^3.0.0",
     "bootstrap": "^4.5.3",
+    "firebase": "^8.4.1",
     "install-peerdeps": "^2.0.3",
     "ngx-bootstrap": "^6.1.0",
     "react": "^16.14.0",

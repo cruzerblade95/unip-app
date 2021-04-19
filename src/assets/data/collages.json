@@ -1,39 +1,29 @@
 [
   {
     "id": 1,
-    "collageName": "كلية الطب",
+    "collageName": "Faculty of medicine",
     "majors": [
-      "الطب البشري"
+      "Human Medicine"
     ]
   },
   {
     "id": 2,
-    "collageName": "كلية العلوم",
+    "collageName": "College of Science",
     "majors": [
-      "الرياضيات",
-      "الفيزيا",
-      "الكيمياء",
-      "التحاليل الطبية"
+      "Maths",
+      "Physics",
+      "Chemistry",
+      "Medical tests"
     ]
   },
   {
     "id": 3,
-    "collageName": "كلية الأمير عبدالله بن غازي لتكنولوجيا المعلومات",
+    "collageName": "Faculty of Artificial Intelligence",
     "majors": [
-      "علم الحاسوب",
-      "هندسة البرمجيات",
-      "نظم المعلومات الحاسوبية",
-      "الرسم الحاسوبي والرسوم المتحركة"
-    ]
-  },
-  {
-    "id": 4,
-    "collageName": "كلية الذكاء الاصطناعي",
-    "majors": [
-      "أمن المعلومات والفضاء الالكتروني",
-      "الذكاء الاصطناعي",
-      "علم البيانات",
-      "الواقع الافتراضي"
+      "Information security and cyberspace",
+      "Artificial intelligence",
+      "Data science",
+      "Virtual Reality"
     ]
   }
 ]

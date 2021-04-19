@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import {Course} from '../../classes/Course';
-import {CourseService} from '../../services/course.service';
-import {FormControl, Validators} from '@angular/forms';
+import { Course } from '../../classes/Course';
+import { CourseService } from '../../services/course.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-course',
@@ -16,13 +16,13 @@ export class CreateCourseComponent implements OnInit {
   submitted = false;
   weekDaysControl = new FormControl('', Validators.required);
   days = [
-    'أحد - ثلاثاء - خميس',
-    'اثنبن - أربعاء',
-    'أحد - ثلاثاء - أربعاء - خميس'
+    'Sunday - Tuesday - Thursday',
+    'Mon - Wednesday',
+    'Sunday - Tuesday - Wednesday - Thursday'
   ];
 
   constructor(private courseService: CourseService,
-              private router: Router) {
+    private router: Router) {
   }
 
   ngOnInit() {
