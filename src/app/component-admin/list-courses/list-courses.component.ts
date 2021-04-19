@@ -1,11 +1,12 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {Course} from '../../classes/Course';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {CourseService} from '../../services/course.service';
-import {Router} from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Course } from '../../classes/Course';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { CourseService } from '../../services/course.service';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { course, FirebaseServiceService } from 'src/app/services/firebase-service.service';
 
 @Component({
   selector: 'app-list-courses',
@@ -17,11 +18,13 @@ export class ListCoursesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'section', 'time', 'hours', 'action'];
   dataSource: MatTableDataSource<Course>;
   course: any;
+  public courselist: Course[] = [];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private courseService: CourseService,
-              private router: Router) {
+    private router: Router,
+    private fireBaseService: FirebaseServiceService) {
     this.dataSource = new MatTableDataSource(this.course);
   }
 
@@ -78,5 +81,16 @@ export class ListCoursesComponent implements OnInit {
 
   editCourse(id: string) {
     this.router.navigate(['edit/course', id]);
+  }
+
+  getCourse(): void {
+    this.fireBaseService.getCourse().subscribe((res) => {
+      this.courselist = res.map((course: any) => {
+        return {
+          ...course.payload.doc.data(),
+          id: course.payload.doc.id,
+        } as Course;
+      });
+    });
   }
 }

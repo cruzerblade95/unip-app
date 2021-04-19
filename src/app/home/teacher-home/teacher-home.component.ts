@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {TeacherService} from '../../services/teacher.service';
-import {Course} from '../../classes/Course';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TeacherService } from '../../services/teacher.service';
+import { Course } from '../../classes/Course';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,18 +13,20 @@ export class TeacherHomeComponent implements OnInit {
   courses: Course[];
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private teacherService: TeacherService) {
+    private router: Router,
+    private teacherService: TeacherService) {
   }
 
   ngOnInit(): void {
     this.reload();
+    // console.log(localStorage.getItem('id'));
   }
 
   private reload() {
-    this.teacherService.getCourses(localStorage.getItem('username'))
+    this.teacherService.getCourses(localStorage.getItem('id'))
       .subscribe(res => {
         this.courses = res;
+        console.log(this.courses);
       }, error => {
         console.log(error);
       });

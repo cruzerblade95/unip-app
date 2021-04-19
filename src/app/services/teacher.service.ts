@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Teacher} from '../classes/Teacher';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Teacher } from '../classes/Teacher';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +45,7 @@ export class TeacherService {
     return this.http.put(`${this.baseUrl}`, teacher);
   }
 
-  getCourses(username: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/username/${username}/courses`);
+  getCourses(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/id/${id}/courses`);
   }
 }

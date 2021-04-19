@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
-import {StudentService} from '../../services/student.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StudentService } from '../../services/student.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,9 +17,9 @@ export class StudentLoginComponent implements OnInit {
   exist: boolean;
 
   constructor(private route: ActivatedRoute,
-              private studentService: StudentService,
-              private router: Router,
-              private fb: FormBuilder) {
+    private studentService: StudentService,
+    private router: Router,
+    private fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -51,7 +51,7 @@ export class StudentLoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 2000
         });
-        this.router.navigate([`/student/home`]);
+        this.router.navigate([`/home/student`]);
       },
       error => {
         this.exist = false;
