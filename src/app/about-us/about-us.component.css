@@ -86,10 +86,14 @@
   text-shadow: 0px 0px 2px black;
 }
 
-.yousef {
+.teacher1 {
   background-image: url("src/assets/images/about-us-img1.png");
 }
 
-.abusalah {
+.teacher2 {
   background-image: url("src/assets/images/about-us-img2.png");
+}
+
+.teacher3{
+  background-image: url("src/assets/images/about-us-img3.png"); 
 }
