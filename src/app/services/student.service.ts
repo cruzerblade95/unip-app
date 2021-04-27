@@ -1,17 +1,17 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {Observable} from 'rxjs';
-import {Student} from '../classes/Student';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Student } from '../classes/Student';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
-  private baseUrl = 'http://localhost:8080/api/v1/student';
+  private baseUrl = 'http://127.0.0.1:8000/api/students/';
 
   constructor(private http: HttpClient,
-              private router: Router) {
+    private router: Router) {
   }
 
   login(username: string, password: string): Observable<any> {

@@ -3,6 +3,5 @@ export class Student {
   name: string;
   username: string;
   password: string;
-  collage: string;
-  major: string;
+  class: string;
 }

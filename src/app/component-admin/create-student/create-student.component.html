@@ -40,7 +40,7 @@
         <mat-form-field appearance="outline" class="example-full-width">
           <mat-label>Class</mat-label>
           <mat-select [formControl]="collageControl"
-                      [(ngModel)]="student.collage"
+                      [(ngModel)]="student.class"
                       required>
             <mat-option *ngFor="let collage of collages"
                         [value]="collage.collageName"

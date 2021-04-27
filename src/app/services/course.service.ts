@@ -8,7 +8,7 @@ import {Course} from '../classes/Course';
 })
 export class CourseService {
 
-  private baseUrl = 'http://localhost:8080/api/v1/course';
+  private baseUrl = 'http://localhost:8000/api/v1/course';
 
   constructor(private http: HttpClient) {
   }
