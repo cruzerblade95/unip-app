@@ -1,11 +1,11 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
-import {Student} from '../../classes/Student';
-import {StudentService} from '../../services/student.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Student } from '../../classes/Student';
+import { StudentService } from '../../services/student.service';
 import Swal from 'sweetalert2';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-students',
@@ -13,14 +13,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./list-students.component.css']
 })
 export class ListStudentsComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'username', 'name', 'collage', 'major', 'action'];
+  displayedColumns: string[] = ['id', 'username', 'name', 'class', 'action'];
   dataSource: MatTableDataSource<Student>;
   students: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private studentService: StudentService,
-              private router: Router) {
+    private router: Router) {
     this.dataSource = new MatTableDataSource(this.students);
   }
 

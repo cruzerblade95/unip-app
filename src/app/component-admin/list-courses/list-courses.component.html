@@ -1,6 +1,6 @@
 <div class="add text-center" routerLink="/create/course">
   <i class="material-icons-outlined">add_circle</i>
-  <h1>Add new Course</h1>
+  <h1>Add new Subject</h1>
 </div>
 <mat-form-field>
   <mat-label>Filter</mat-label>
@@ -16,12 +16,17 @@
     </ng-container>
 
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Course name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject name</th>
       <td mat-cell *matCellDef="let row"> {{row.name}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="section">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Section number</th>
+    <ng-container matColumnDef="className">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Class name</th>
+      <td mat-cell *matCellDef="let row"> {{row.sectionNumber}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Date</th>
       <td mat-cell *matCellDef="let row"> {{row.sectionNumber}}</td>
     </ng-container>
 

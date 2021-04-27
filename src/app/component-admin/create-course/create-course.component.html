@@ -3,7 +3,17 @@
     <div class="row">
       <div class="form-group col-12">
         <mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>Name</mat-label>
+          <mat-label>Subject Name</mat-label>
+          <input matInput
+                 id="courseName"
+                 required
+                 [(ngModel)]="course.name"
+                 name="courseName">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Class Name</mat-label>
           <input matInput
                  id="courseName"
                  required
@@ -39,18 +49,32 @@
       </div>
 
       <div class="form-group col-md-6 col-12">
-        <mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>Week days</mat-label>
-          <mat-select [formControl]="weekDaysControl"
-                      [(ngModel)]="course.days"
-                      required>
-            <mat-option *ngFor="let day of days"
-                        [value]="day">
-              {{day}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="weekDaysControl.hasError('required')">Please choose a week days</mat-error>
-        </mat-form-field>
+        <mat-form-field appearance="outline" class="example-chip-list">
+  <mat-label>Days</mat-label>
+  <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let day of days"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(day)">
+      {{day}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Insert Days..."
+      #fruitInput
+      [formControl]="weekDaysControl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let day of filteredDays | async" [value]="day">
+      {{day}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
       </div>
 
       <div class="form-group col-md-6 col-12">

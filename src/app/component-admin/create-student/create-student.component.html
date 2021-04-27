@@ -38,7 +38,7 @@
 
       <div class="form-group col-md-6 col-12">
         <mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>Collage</mat-label>
+          <mat-label>Class</mat-label>
           <mat-select [formControl]="collageControl"
                       [(ngModel)]="student.collage"
                       required>
@@ -48,22 +48,7 @@
               {{collage.collageName}}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="collageControl.hasError('required')">Please choose a collage</mat-error>
-        </mat-form-field>
-      </div>
-
-      <div class="form-group col-md-6 col-12">
-        <mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>Major</mat-label>
-          <mat-select [formControl]="collageControl"
-                      [(ngModel)]="student.major"
-                      required>
-            <mat-option *ngFor="let major of selectedMajors"
-                        [value]="major">
-              {{major}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="collageControl.hasError('required')">Please choose a major</mat-error>
+          <mat-error *ngIf="collageControl.hasError('required')">Please choose a class</mat-error>
         </mat-form-field>
       </div>
 

@@ -15,7 +15,7 @@ import { course, FirebaseServiceService } from 'src/app/services/firebase-servic
 })
 export class ListCoursesComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'section', 'time', 'hours', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'className', 'date', 'time', 'hours', 'action'];
   dataSource: MatTableDataSource<Course>;
   course: any;
   public courselist: Course[] = [];

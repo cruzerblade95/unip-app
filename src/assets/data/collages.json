@@ -1,29 +1,14 @@
 [
   {
     "id": 1,
-    "collageName": "Faculty of medicine",
-    "majors": [
-      "Human Medicine"
-    ]
+    "collageName": "Kelas A"
   },
   {
     "id": 2,
-    "collageName": "College of Science",
-    "majors": [
-      "Maths",
-      "Physics",
-      "Chemistry",
-      "Medical tests"
-    ]
+    "collageName": "Kelas B"
   },
   {
     "id": 3,
-    "collageName": "Faculty of Artificial Intelligence",
-    "majors": [
-      "Information security and cyberspace",
-      "Artificial intelligence",
-      "Data science",
-      "Virtual Reality"
-    ]
+    "collageName": "Kelas C"
   }
 ]
