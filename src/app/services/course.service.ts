@@ -1,14 +1,14 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Course} from '../classes/Course';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Course } from '../classes/Course';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  private baseUrl = 'http://localhost:8000/api/v1/course';
+  private baseUrl = 'http://127.0.0.1:8000/api/subjects';
 
   constructor(private http: HttpClient) {
   }

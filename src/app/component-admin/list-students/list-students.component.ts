@@ -73,7 +73,7 @@ export class ListStudentsComponent implements OnInit {
     });
   }
 
-  editStudent(username: string) {
-    this.router.navigate(['edit/student', username]);
+  editStudent(id: number) {
+    this.router.navigate(['edit/student', id]);
   }
 }

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import {TeacherService} from '../../services/teacher.service';
+import { TeacherService } from '../../services/teacher.service';
 
 @Component({
   selector: 'app-teacher-login',
@@ -29,9 +29,9 @@ export class TeacherLoginComponent implements OnInit {
   ];
 
   constructor(private route: ActivatedRoute,
-              private teacherService: TeacherService,
-              private router: Router,
-              private fb: FormBuilder) {
+    private teacherService: TeacherService,
+    private router: Router,
+    private fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -45,8 +45,7 @@ export class TeacherLoginComponent implements OnInit {
 
   onSubmit() {
     this.teacherService.login(
-      this.loginForm.value.username,
-      this.loginForm.value.password
+      this.loginForm.value
     ).subscribe(
       res => {
         localStorage.setItem('id', res.id);

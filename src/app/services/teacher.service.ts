@@ -8,13 +8,13 @@ import { Teacher } from '../classes/Teacher';
 })
 export class TeacherService {
 
-  private baseUrl = 'http://localhost:8080/api/v1/teacher';
+  private baseUrl = 'http://127.0.0.1:8000/api/teachers';
 
   constructor(private http: HttpClient) {
   }
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(this.baseUrl + `/login/${username}/${password}`, null);
+  login(teacher: Teacher): Observable<any> {
+    return this.http.post(this.baseUrl + `/login`, teacher);
   }
 
   list(): Observable<any> {
@@ -38,7 +38,7 @@ export class TeacherService {
   }
 
   getTeacherByUsername(username: string) {
-    return this.http.get(`${this.baseUrl}/username/${username}`);
+    return this.http.get(`${this.baseUrl}/${username}`);
   }
 
   updateTeacher(teacher: Teacher): Observable<any> {

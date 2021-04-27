@@ -1,9 +1,9 @@
 export class Course {
   id: number;
-  name: string;
-  hourFrom: string;
-  hourTo: string;
+  subjectName: string;
+  className: string;
+  timeFrom: string;
+  timeTo: string;
   days: string;
-  hours: number;
-  sectionNumber: number;
+  teacherName: string;
 }

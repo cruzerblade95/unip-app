@@ -8,7 +8,7 @@ import { Student } from '../classes/Student';
   providedIn: 'root'
 })
 export class StudentService {
-  private baseUrl = 'http://127.0.0.1:8000/api/students/';
+  private baseUrl = 'http://127.0.0.1:8000/api/students';
 
   constructor(private http: HttpClient,
     private router: Router) {
@@ -46,7 +46,7 @@ export class StudentService {
   }
 
   getStudentByUsername(username: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/username/${username}`);
+    return this.http.get(`${this.baseUrl}/${username}`);
   }
 
   updateStudent(student: Student): Observable<any> {
