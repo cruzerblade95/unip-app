@@ -4,7 +4,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="example-app-name">
-      Student Attendance System <img src="assets/images/SRKSI_Bannersmall.png" alt="Herman Logo" width="50px"/>
+      Student Attendance System <img src="assets/images/SRKSI_Bannersmall.png" alt="Herman Logo" width="50px" />
     </h1>
     <div class="user-menu" *ngIf="isLoggedIn()">
       <button class="btn text-light" type="button" title="Logout" (click)="logout()">
@@ -13,18 +13,16 @@
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav style="width: 250px"
-                 #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav style="width: 250px" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
         <a mat-list-item routerLink="/login" routerLinkActive="active">
           <i class="material-icons-outlined">home</i> Home
         </a>
-        <a mat-list-item routerLink="/articles" routerLinkActive="active">
+        <!-- <a mat-list-item routerLink="/articles" routerLinkActive="active">
           <i class="material-icons-outlined">article</i> Articles
-        </a>
+        </a> -->
         <a mat-list-item routerLink="/about-us" routerLinkActive="active">
           <i class="material-icons-outlined">info</i> About us
         </a>
